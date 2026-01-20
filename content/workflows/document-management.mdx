@@ -1,0 +1,143 @@
+---
+title: Document Management
+description: Best practices for document collection, organization, and management.
+---
+
+# Document Management
+
+This guide covers document management workflows in JaroLoan.
+
+## Document Collection Workflow
+
+### Staff Upload
+
+Staff members can upload documents:
+
+1. Open loan detail page
+2. Navigate to **Documents** tab
+3. Click **Upload** or drag files
+4. Select document type
+5. Add notes (optional)
+6. Click **Save**
+
+### Borrower Portal Upload
+
+Borrowers can upload through the portal:
+
+1. Borrower receives upload request
+2. Logs into borrower portal
+3. Uploads requested documents
+4. Staff receives notification
+
+### Email Integration
+
+Documents can be received via email:
+
+- Unique loan email address
+- Auto-classification attempted
+- Staff reviews and confirms
+
+## Document Classification
+
+### Auto-Classification
+
+JaroLoan attempts to classify uploads:
+
+- OCR text extraction
+- ML-based classification
+- Confidence scoring
+- Manual review if uncertain
+
+### Manual Classification
+
+For unclassified documents:
+
+1. Open document viewer
+2. Click **Classify**
+3. Select document type
+4. Confirm or add pages
+
+### Document Types
+
+Common document categories:
+
+- **Income** - Paystubs, W-2s, tax returns
+- **Asset** - Bank statements, investment accounts
+- **Property** - Appraisal, title, insurance
+- **Identity** - Driver's license, passport
+- **Credit** - Credit reports, explanations
+
+## Document Organization
+
+### Folder Structure
+
+Documents are organized by:
+
+- Document category
+- Upload date
+- Linked condition
+
+### Search and Filter
+
+Find documents quickly:
+
+- Search by filename
+- Filter by type
+- Filter by date
+- Filter by uploader
+
+## Version Control
+
+### Multiple Versions
+
+When new versions are uploaded:
+
+- Previous versions preserved
+- Version history maintained
+- Can revert if needed
+
+### Accessing History
+
+1. Open document
+2. Click **Version History**
+3. View or restore previous versions
+
+## Expiration Tracking
+
+### Expiring Documents
+
+Certain documents have validity periods:
+
+| Document Type | Typical Validity |
+|---------------|------------------|
+| Credit Report | 120 days |
+| Paystubs | 30 days |
+| Bank Statements | 60 days |
+| Appraisal | 180 days |
+
+### Alerts
+
+System generates alerts when:
+
+- Document approaching expiration
+- Document has expired
+- Refresh required
+
+## Security
+
+### Access Control
+
+- Role-based access
+- Document-level permissions
+- Audit trail of all access
+
+### Encryption
+
+- At-rest encryption
+- In-transit encryption
+- Secure viewer
+
+## Related Documentation
+
+- [Documents Feature](/docs/features/documents)
+- [Borrower Portal](/docs/features/borrower-portal)

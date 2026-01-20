@@ -1,0 +1,330 @@
+---
+title: API Reference
+description: Complete REST API documentation for JaroLoan.
+---
+
+# API Reference
+
+JaroLoan provides a REST API for programmatic access to loan origination functionality.
+
+## Getting Started
+
+### Base URL
+
+```
+https://api.jaroloan.com/v1
+```
+
+### Authentication
+
+All API requests require authentication:
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://api.jaroloan.com/v1/loans
+```
+
+### Rate Limits
+
+| Tier | Requests/Minute |
+|------|-----------------|
+| Standard | 100 |
+| Premium | 1000 |
+
+## Common Patterns
+
+### Pagination
+
+List endpoints support pagination:
+
+```
+GET /loans?page=1&limit=20
+```
+
+Response includes:
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "total": 150,
+    "pages": 8
+  }
+}
+```
+
+### Filtering
+
+Filter using query parameters:
+
+```
+GET /loans?stage=PROCESSING&loanOfficerId=123
+```
+
+### Sorting
+
+Sort using `sort` parameter:
+
+```
+GET /loans?sort=-createdAt
+```
+
+Use `-` prefix for descending order.
+
+## Loans API
+
+### List Loans
+
+```
+GET /loans
+```
+
+**Parameters:**
+- `stage` - Filter by stage
+- `loanOfficerId` - Filter by LO
+- `search` - Search term
+- `page`, `limit` - Pagination
+
+**Response:**
+```json
+{
+  "data": [
+    {
+      "id": "loan_123",
+      "loanNumber": "2024-001234",
+      "stage": "PROCESSING",
+      "loanAmount": 350000,
+      "borrower": {
+        "firstName": "John",
+        "lastName": "Smith"
+      },
+      "property": {
+        "address": "123 Main St"
+      },
+      "createdAt": "2024-01-15T10:00:00Z"
+    }
+  ],
+  "pagination": {...}
+}
+```
+
+### Get Loan
+
+```
+GET /loans/{id}
+```
+
+### Create Loan
+
+```
+POST /loans
+```
+
+**Request Body:**
+```json
+{
+  "loanType": "PURCHASE",
+  "loanAmount": 350000,
+  "purchasePrice": 400000,
+  "propertyType": "SINGLE_FAMILY",
+  "occupancy": "PRIMARY"
+}
+```
+
+### Update Loan
+
+```
+PATCH /loans/{id}
+```
+
+### Transition Loan Stage
+
+```
+POST /loans/{id}/transitions
+```
+
+**Request Body:**
+```json
+{
+  "targetStage": "UNDERWRITING",
+  "notes": "Submitting for UW review"
+}
+```
+
+## Borrowers API
+
+### List Loan Borrowers
+
+```
+GET /loans/{loanId}/borrowers
+```
+
+### Add Borrower
+
+```
+POST /loans/{loanId}/borrowers
+```
+
+**Request Body:**
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john@example.com",
+  "phone": "555-123-4567",
+  "type": "PRIMARY"
+}
+```
+
+### Update Borrower
+
+```
+PATCH /borrowers/{id}
+```
+
+## Documents API
+
+### List Loan Documents
+
+```
+GET /loans/{loanId}/documents
+```
+
+### Upload Document
+
+```
+POST /loans/{loanId}/documents
+```
+
+Use `multipart/form-data`:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -F "file=@document.pdf" \
+  -F "type=PAYSTUB" \
+  https://api.jaroloan.com/v1/loans/123/documents
+```
+
+### Download Document
+
+```
+GET /documents/{id}/download
+```
+
+## Conditions API
+
+### List Loan Conditions
+
+```
+GET /loans/{loanId}/conditions
+```
+
+### Create Condition
+
+```
+POST /loans/{loanId}/conditions
+```
+
+**Request Body:**
+```json
+{
+  "title": "Most recent paystub",
+  "description": "Provide current paystub",
+  "type": "PTD",
+  "category": "INCOME"
+}
+```
+
+### Clear Condition
+
+```
+POST /conditions/{id}/clear
+```
+
+### Waive Condition
+
+```
+POST /conditions/{id}/waive
+```
+
+## Disclosures API
+
+### Generate Loan Estimate
+
+```
+POST /loans/{loanId}/disclosures/le
+```
+
+### Generate Closing Disclosure
+
+```
+POST /loans/{loanId}/disclosures/cd
+```
+
+### Get Disclosure
+
+```
+GET /disclosures/{id}
+```
+
+## Error Handling
+
+### Error Response Format
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid loan amount",
+    "details": [
+      {
+        "field": "loanAmount",
+        "message": "Must be positive number"
+      }
+    ]
+  }
+}
+```
+
+### Common Error Codes
+
+| Code | Description |
+|------|-------------|
+| `AUTHENTICATION_ERROR` | Invalid or missing API key |
+| `AUTHORIZATION_ERROR` | Insufficient permissions |
+| `VALIDATION_ERROR` | Request validation failed |
+| `NOT_FOUND` | Resource not found |
+| `RATE_LIMIT_EXCEEDED` | Too many requests |
+
+## Webhooks
+
+### Available Events
+
+- `loan.created`
+- `loan.updated`
+- `loan.stage_changed`
+- `condition.created`
+- `condition.cleared`
+- `document.uploaded`
+
+### Webhook Payload
+
+```json
+{
+  "event": "loan.stage_changed",
+  "timestamp": "2024-01-15T10:00:00Z",
+  "data": {
+    "loanId": "loan_123",
+    "previousStage": "PROCESSING",
+    "newStage": "UNDERWRITING"
+  }
+}
+```
+
+## Related Documentation
+
+- [Architecture](/docs/technical/architecture)
+- [Database Schema](/docs/technical/database)

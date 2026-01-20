@@ -1,0 +1,194 @@
+---
+title: HMDA Compliance
+description: Understanding Home Mortgage Disclosure Act compliance in JaroLoan.
+---
+
+# HMDA Compliance
+
+JaroLoan supports HMDA data collection and reporting requirements.
+
+## HMDA Overview
+
+### What is HMDA?
+
+The Home Mortgage Disclosure Act requires:
+
+- Collection of mortgage lending data
+- Annual reporting to regulators
+- Public disclosure of lending patterns
+
+### Purpose
+
+HMDA data helps:
+
+- Identify discriminatory lending
+- Detect redlining
+- Inform community investment
+- Support fair lending oversight
+
+### Who Must Report
+
+Institutions meeting thresholds for:
+
+- Asset size
+- Location
+- Loan volume
+
+## Data Collection
+
+### Required Data Points
+
+JaroLoan collects HMDA data fields:
+
+**Loan Information**
+- Universal Loan Identifier (ULI)
+- Application date
+- Loan type
+- Loan purpose
+- Loan amount
+
+**Property Information**
+- Property address
+- Census tract
+- Property type
+
+**Applicant Information**
+- Ethnicity
+- Race
+- Sex
+- Age
+- Income
+
+**Action Information**
+- Action taken
+- Action date
+- Denial reasons (if applicable)
+
+### Demographic Data Collection
+
+#### Methods
+
+Demographics collected via:
+
+- Borrower self-identification
+- Visual observation (in person)
+- Not provided (borrower declines)
+
+#### Privacy Considerations
+
+- Voluntary for borrower
+- Used only for HMDA
+- Separate from underwriting
+
+### Government Monitoring Form
+
+JaroLoan provides:
+
+- Digital form completion
+- In-person observation recording
+- Joint applicant handling
+
+## Data Validation
+
+### Edit Checks
+
+JaroLoan validates HMDA data:
+
+**Syntactical Edits**
+- Format validation
+- Required field checks
+- Value range checks
+
+**Validity Edits**
+- Cross-field consistency
+- Code validity
+- Logical checks
+
+**Quality Edits**
+- Unusual values
+- Statistical outliers
+- Pattern detection
+
+**Macro Edits**
+- Aggregate data checks
+- Year-over-year comparison
+
+### Error Resolution
+
+When errors found:
+
+1. System flags error
+2. Review error details
+3. Correct data or provide explanation
+4. Re-validate
+
+## Reporting
+
+### Loan Application Register (LAR)
+
+Annual submission containing:
+
+- All covered applications
+- All originations
+- Purchased loans
+
+### Filing Deadlines
+
+| Report Type | Deadline |
+|-------------|----------|
+| Annual LAR | March 1 |
+| Quarterly (if required) | 60 days after quarter |
+
+### Submission Process
+
+1. Generate LAR export
+2. Validate submission
+3. Submit to CFPB
+4. Receive confirmation
+
+## JaroLoan Features
+
+### Data Entry
+
+- HMDA fields integrated into loan workflow
+- Required field validation
+- Data completion tracking
+
+### Reporting Tools
+
+- LAR generation
+- Pre-submission validation
+- Error correction workflow
+- Submission tracking
+
+### Compliance Dashboard
+
+Monitor HMDA status:
+
+- Data completion rates
+- Validation errors
+- Filing status
+- Deadline tracking
+
+## Fair Lending
+
+### HMDA and Fair Lending
+
+HMDA data supports:
+
+- Fair lending analysis
+- Redlining detection
+- Pricing disparities
+- Denial patterns
+
+### Best Practices
+
+1. **Consistent collection** - Same process for all
+2. **Complete data** - Don't skip fields
+3. **Regular review** - Monitor patterns
+4. **Train staff** - Proper collection methods
+
+## Related Documentation
+
+- [Admin Guide](/docs/user-guide/admins)
+- [Compliance Overview](/docs/compliance/overview)

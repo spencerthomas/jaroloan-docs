@@ -1,0 +1,230 @@
+---
+title: Security & Privacy
+description: Security features and privacy protections in JaroLoan.
+---
+
+# Security & Privacy
+
+JaroLoan implements comprehensive security measures to protect sensitive mortgage data.
+
+## Security Overview
+
+### Security Principles
+
+JaroLoan security is built on:
+
+- **Defense in depth** - Multiple security layers
+- **Least privilege** - Minimal access needed
+- **Data protection** - Encryption everywhere
+- **Audit trails** - Complete logging
+
+## Authentication
+
+### User Authentication
+
+Secure login features:
+
+- Email/password authentication
+- Strong password requirements
+- Account lockout after failures
+- Password reset via email
+
+### Multi-Factor Authentication (MFA)
+
+Optional MFA support:
+
+- TOTP authenticator apps
+- SMS verification
+- Required for admin accounts
+
+### Session Management
+
+- Secure session tokens
+- Automatic timeout
+- Single session enforcement
+- Manual session termination
+
+## Authorization
+
+### Role-Based Access Control (RBAC)
+
+Access controlled by role:
+
+| Role | Data Access |
+|------|-------------|
+| Loan Officer | Own loans |
+| Processor | Assigned loans |
+| Underwriter | UW queue |
+| Closer | Closing pipeline |
+| Admin | All data |
+
+### Permission Levels
+
+Granular permissions:
+
+- View access
+- Edit access
+- Delete access
+- Admin functions
+
+### Data Isolation
+
+- Organization data separated
+- Cross-tenant access prevented
+- Team-level isolation available
+
+## Data Encryption
+
+### Encryption at Rest
+
+All stored data encrypted:
+
+- AES-256 encryption
+- Encrypted database
+- Encrypted file storage
+- Key management system
+
+### Encryption in Transit
+
+All data in transit protected:
+
+- TLS 1.3 required
+- Certificate validation
+- No legacy protocols
+
+### Sensitive Data
+
+PII receives additional protection:
+
+- SSN encrypted at field level
+- DOB protected
+- Financial data secured
+
+## Network Security
+
+### Infrastructure
+
+- Hosted on secure cloud platform
+- DDoS protection
+- Web Application Firewall (WAF)
+- Regular security updates
+
+### API Security
+
+- API key authentication
+- Rate limiting
+- Request validation
+- CORS configuration
+
+## Audit & Logging
+
+### Audit Trail
+
+Complete logging of:
+
+- User logins
+- Data access
+- Data changes
+- Administrative actions
+
+### Log Retention
+
+- Security logs: 2 years
+- Audit logs: 7 years
+- System logs: 1 year
+
+### Monitoring
+
+- Real-time alerting
+- Anomaly detection
+- Failed login monitoring
+- Access pattern analysis
+
+## Compliance
+
+### Regulatory Compliance
+
+JaroLoan supports compliance with:
+
+- **GLBA** - Safeguards Rule
+- **CCPA** - California privacy
+- **State regulations** - Various requirements
+
+### SOC 2
+
+- Type II certified
+- Annual audits
+- Security controls verified
+
+### Data Retention
+
+Configurable retention:
+
+- Loan data: Per regulatory requirement
+- Documents: Configurable
+- Audit logs: 7 years minimum
+
+## Privacy
+
+### Data Collection
+
+JaroLoan collects only:
+
+- Required business data
+- Regulatory-required data
+- User-consented analytics
+
+### Data Use
+
+Data used only for:
+
+- Loan origination
+- Regulatory compliance
+- System improvement
+
+### Borrower Privacy
+
+- Borrower portal security
+- Limited data exposure
+- Consent-based sharing
+
+## Incident Response
+
+### Security Incidents
+
+Established process for:
+
+- Detection and alerting
+- Investigation
+- Containment
+- Notification
+- Remediation
+
+### Breach Notification
+
+If breach occurs:
+
+- Prompt notification
+- Regulatory reporting
+- Customer communication
+
+## Best Practices
+
+### For Administrators
+
+1. **Review access** - Regular audits
+2. **Enforce MFA** - For all users
+3. **Monitor logs** - Watch for anomalies
+4. **Update training** - Security awareness
+
+### For Users
+
+1. **Strong passwords** - Use password manager
+2. **Enable MFA** - When available
+3. **Log out** - When done
+4. **Report suspicious** - Alert admin
+
+## Related Documentation
+
+- [Admin Guide](/docs/user-guide/admins)
+- [Audit Trail](/docs/features/audit-trail)

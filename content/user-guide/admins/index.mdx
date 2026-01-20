@@ -1,0 +1,236 @@
+---
+title: Administrator Guide
+description: Complete guide for system administrators managing JaroLoan LOS.
+---
+
+# Administrator Guide
+
+This guide covers system administration, configuration, and management in JaroLoan.
+
+## Admin Dashboard
+
+Access Admin from the sidebar:
+
+- **System Health** - Performance metrics
+- **User Activity** - Login/usage stats
+- **Pending Actions** - Items needing attention
+- **Compliance Status** - Reporting status
+
+## User Management
+
+### Creating Users
+
+1. Navigate to **Admin > Users**
+2. Click **Add User**
+3. Enter user details:
+   - Name
+   - Email
+   - Role
+   - Team
+4. Set permissions
+5. Send invitation
+
+### Roles
+
+Assign appropriate roles:
+
+| Role | Access Level |
+|------|--------------|
+| Loan Officer | Own loans, leads |
+| Processor | Assigned loans |
+| Underwriter | UW queue, decisions |
+| Closer | Closing pipeline |
+| Manager | Team loans, reports |
+| Admin | Full system access |
+
+### Permissions
+
+Fine-tune access:
+
+- View permissions
+- Edit permissions
+- Delete permissions
+- Admin functions
+
+### Deactivating Users
+
+When user leaves:
+
+1. Open user profile
+2. Click **Deactivate**
+3. Reassign their loans
+4. Confirm deactivation
+
+## Product Configuration
+
+### Creating Products
+
+1. Navigate to **Admin > Products**
+2. Click **Add Product**
+3. Configure:
+   - Product name
+   - Loan type
+   - Terms
+   - Guidelines
+
+### Product Guidelines
+
+Set product parameters:
+
+- LTV limits
+- DTI limits
+- Credit score requirements
+- Property types allowed
+
+### Activating/Deactivating
+
+Control product availability:
+
+- Active products visible to users
+- Inactive preserved but hidden
+
+## Workflow Configuration
+
+### Stage Settings
+
+Customize loan stages:
+
+1. Navigate to **Admin > Workflow**
+2. Select stage
+3. Configure:
+   - Stage name
+   - Required fields
+   - Transition rules
+   - SLA targets
+
+### Automation Rules
+
+Configure automatic actions:
+
+- Task creation
+- Notifications
+- Status updates
+- Escalations
+
+## Templates
+
+### Condition Templates
+
+Create reusable conditions:
+
+1. Navigate to **Admin > Templates**
+2. Select **Conditions**
+3. Create new template
+4. Set category and defaults
+
+### Email Templates
+
+Configure system emails:
+
+- Notification templates
+- Reminder templates
+- Request templates
+
+### Document Request Templates
+
+Standard document requests:
+
+- Income documents
+- Asset documents
+- Property documents
+
+## Integrations
+
+### Credit Services
+
+Configure credit providers:
+
+1. Navigate to **Admin > Integrations**
+2. Select **Credit**
+3. Enter credentials
+4. Test connection
+
+### AUS Configuration
+
+Set up AUS integration:
+
+- DU credentials
+- LP credentials
+- Default settings
+
+### Other Integrations
+
+Configure additional services:
+
+- VOI/VOE providers
+- Document services
+- Title companies
+
+## Reporting
+
+### Standard Reports
+
+Access built-in reports:
+
+- Pipeline reports
+- Production reports
+- Compliance reports
+- Performance reports
+
+### Custom Reports
+
+Create custom reports:
+
+1. Navigate to **Admin > Reports**
+2. Click **New Report**
+3. Select data fields
+4. Configure filters
+5. Save report
+
+### Scheduled Reports
+
+Automate report delivery:
+
+- Select report
+- Set schedule
+- Add recipients
+- Enable delivery
+
+## Compliance Settings
+
+### HMDA Configuration
+
+Configure HMDA reporting:
+
+- Reporting entity info
+- Data collection settings
+- Export settings
+
+### Disclosure Settings
+
+Configure TRID settings:
+
+- Business day calendar
+- Default delivery methods
+- Fee configurations
+
+### Audit Retention
+
+Set retention policies:
+
+- Loan data retention
+- Document retention
+- Audit log retention
+
+## Best Practices
+
+1. **Regular audits** - Review user access
+2. **Test changes** - Use staging environment
+3. **Document config** - Keep records
+4. **Train users** - After changes
+
+## Related Documentation
+
+- [Security](/docs/compliance/security)
+- [HMDA Compliance](/docs/compliance/hmda)
+- [API Reference](/docs/technical/api-reference)

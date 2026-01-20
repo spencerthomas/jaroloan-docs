@@ -1,0 +1,223 @@
+---
+title: TRID Compliance
+description: Understanding TILA-RESPA Integrated Disclosure compliance in JaroLoan.
+---
+
+# TRID Compliance
+
+JaroLoan is designed to help you maintain TRID (TILA-RESPA Integrated Disclosure) compliance throughout the loan process.
+
+## TRID Overview
+
+### What is TRID?
+
+TRID combines disclosures required by:
+
+- **TILA** - Truth in Lending Act
+- **RESPA** - Real Estate Settlement Procedures Act
+
+Into two primary forms:
+
+- **Loan Estimate (LE)** - Replaces GFE and early TIL
+- **Closing Disclosure (CD)** - Replaces HUD-1 and final TIL
+
+### Regulatory Authority
+
+Regulated by the CFPB under Regulation Z (TILA) and Regulation X (RESPA).
+
+## Loan Estimate Requirements
+
+### Timing
+
+LE must be delivered within **3 business days** of receiving an application:
+
+- **Application** = 6 pieces of information:
+  1. Consumer name
+  2. Consumer income
+  3. Consumer SSN
+  4. Property address
+  5. Property value estimate
+  6. Loan amount
+
+### Content Requirements
+
+LE must include:
+
+- Loan terms
+- Projected payments
+- Costs at closing
+- Closing costs
+- Cash to close
+- Comparisons
+
+### Delivery Methods
+
+JaroLoan tracks delivery by method:
+
+| Method | Receipt Date |
+|--------|--------------|
+| Hand delivery | Same day |
+| Email (consent) | Same day |
+| Mail | 3 days later |
+| Overnight | 1 day later |
+
+## Intent to Proceed
+
+### Requirement
+
+Must receive Intent to Proceed before collecting fees (except credit report).
+
+### Acceptable Methods
+
+- Verbal statement (documented)
+- Written statement
+- Electronic signature
+- Implied by payment
+
+### Documentation
+
+JaroLoan captures:
+
+- Date/time received
+- Method of receipt
+- Who received it
+- Borrower statement
+
+## Changed Circumstances
+
+### Valid Changed Circumstances
+
+Re-disclosure permitted for:
+
+1. **Changed circumstance affecting settlement charges**
+2. **Changed circumstance affecting eligibility**
+3. **Borrower-requested changes**
+4. **Interest rate lock**
+5. **Expiration of original LE**
+6. **New information**
+7. **Delayed settlement**
+
+### Re-Disclosure Requirements
+
+When re-disclosing:
+
+- Issue within 3 business days
+- Document the circumstance
+- Update fees appropriately
+- Maintain audit trail
+
+## Closing Disclosure
+
+### Timing
+
+CD must be **received** by borrower at least **3 business days** before closing.
+
+### Calculation
+
+JaroLoan calculates:
+
+- Earliest closing date based on delivery method
+- Business days (excluding Sundays, federal holidays)
+- Waiver eligibility
+
+### 3-Day Wait Reset
+
+New 3-day wait required if:
+
+- APR increases > 0.125% (fixed-rate)
+- APR increases > 0.25% (adjustable-rate)
+- Loan product changes
+- Prepayment penalty added
+
+## Tolerance Rules
+
+### Zero Tolerance (No Increase)
+
+Cannot increase from LE to CD:
+
+- Lender/broker fees
+- Affiliate fees
+- Transfer taxes
+- Fees for unallowed shopping
+
+### 10% Cumulative Tolerance
+
+Can increase up to 10% total:
+
+- Recording fees
+- Third-party services (lender-selected)
+
+### Unlimited Tolerance
+
+Can change any amount:
+
+- Borrower-shopped services
+- Prepaid interest
+- Property insurance
+- Initial escrow
+- Third-party services (borrower-selected)
+
+## Tolerance Cure
+
+### When Required
+
+Cure required if tolerance exceeded at closing.
+
+### Cure Method
+
+- Calculate excess
+- Apply lender credit
+- Refund within 60 days if post-closing
+
+### JaroLoan Tracking
+
+System automatically:
+
+- Calculates tolerance
+- Flags violations
+- Calculates cure amount
+- Applies credits
+
+## Compliance Features
+
+### Timeline Visualization
+
+View TRID timeline:
+
+- Application date
+- LE due date
+- LE sent date
+- Intent received
+- CD sent date
+- Earliest closing
+
+### Alerts
+
+Automatic alerts for:
+
+- LE deadline approaching
+- Tolerance violations
+- CD timing issues
+- Wait period status
+
+### Audit Trail
+
+Full documentation of:
+
+- All disclosures sent
+- Delivery confirmations
+- Borrower acknowledgments
+- Changed circumstances
+
+## Best Practices
+
+1. **Start early** - Begin LE prep at application
+2. **Document changes** - Record all circumstances
+3. **Track delivery** - Confirm receipt method
+4. **Monitor tolerance** - Check before CD
+5. **Allow buffer** - Plan for timing issues
+
+## Related Documentation
+
+- [Disclosures Feature](/docs/features/disclosures)
+- [Closing Workflow](/docs/workflows/closing-flow)
