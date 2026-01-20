@@ -53,12 +53,12 @@ export function SearchDialog() {
           <CommandEmpty>No results found.</CommandEmpty>
           {docsConfig.sidebarNav.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
-              {group.items.map((item) => (
+              {group.items?.filter((item) => item.href).map((item) => (
                 <CommandItem
                   key={item.href}
                   value={item.title}
                   onSelect={() => {
-                    runCommand(() => router.push(item.href))
+                    runCommand(() => router.push(item.href!))
                   }}
                 >
                   {item.title}
