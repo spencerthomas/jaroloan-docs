@@ -4,8 +4,9 @@ import Link from "next/link"
 import { docsConfig, siteConfig } from "@/lib/docs.config"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
-import { Menu, Search, Moon, Sun, Github } from "lucide-react"
+import { Menu, Moon, Sun, Github } from "lucide-react"
 import { useState } from "react"
+import { SearchDialog } from "./search-dialog"
 
 export function DocsHeader() {
   const pathname = usePathname()
@@ -52,13 +53,7 @@ export function DocsHeader() {
         {/* Right side */}
         <div className="flex flex-1 items-center justify-end space-x-4">
           {/* Search */}
-          <button className="inline-flex items-center rounded-md border bg-background px-3 py-1.5 text-sm text-muted-foreground hover:bg-accent">
-            <Search className="mr-2 h-4 w-4" />
-            <span className="hidden sm:inline">Search docs...</span>
-            <kbd className="ml-2 hidden rounded bg-muted px-1.5 text-xs sm:inline">
-              ⌘K
-            </kbd>
-          </button>
+          <SearchDialog />
 
           {/* GitHub */}
           <a
